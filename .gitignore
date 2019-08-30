@@ -1,0 +1,5 @@
+minimal/minimal.iml
+*/.gradle/
+*/.idea/
+*/build/
+*/out/
