@@ -1,0 +1,21 @@
+pool:
+  vmImage: "vs2017-win2016"
+  demands: java
+
+trigger:
+    [master]
+
+steps:
+- checkout: self  # self represents the repo where the initial Pipelines YAML file was found
+  
+- task: Gradle@2
+  displayName: 'build minimal'
+  inputs:
+    tasks: 'build'
+    workingDirectory: 'minimal'
+
+- task: Gradle@2
+  displayName: 'build how_to_test'
+  inputs:
+    tasks: 'build'
+    workingDirectory: 'how_to_test'
