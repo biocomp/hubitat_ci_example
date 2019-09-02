@@ -9,3 +9,8 @@ metadata {
 }
 
 def parse() {}
+
+def readSomeState(def name)
+{
+    return state."${name}"
+}

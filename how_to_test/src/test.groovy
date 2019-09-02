@@ -3,6 +3,7 @@
 package me.biocomp.hubitat_ci_example
 
 import me.biocomp.hubitat_ci.api.app_api.AppExecutor
+import me.biocomp.hubitat_ci.api.device_api.DeviceExecutor
 import me.biocomp.hubitat_ci.app.HubitatAppSandbox
 import me.biocomp.hubitat_ci.device.HubitatDeviceSandbox
 import me.biocomp.hubitat_ci.validation.Flags
@@ -71,6 +72,25 @@ class Mocking extends Specification
 
         expect:
             script.methodThatCallsPrivateMethod() == "Mocked data!"
+    }
+
+    def "Mocking app/device state"()
+    {
+        setup:
+            def state = [val1:42, val2:"Some value2"] // Defining state map
+
+            // This is example for device
+            DeviceExecutor executorApi = Mock{
+                _*getState() >> state // State mocked here
+            }
+
+            def script = new HubitatDeviceSandbox(new File("device_script.groovy"))
+                    .run(api: executorApi)
+
+        expect:
+            script.readSomeState("val1") == 42
+            script.readSomeState("val2") == "Some value2"
+            script.readSomeState("invalid") == null
     }
 }
 
