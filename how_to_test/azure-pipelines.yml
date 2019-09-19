@@ -3,7 +3,6 @@ pool:
   demands: java
 
 trigger: [master]
-pr: [*]
 
 pr:
   branches:
