@@ -5,6 +5,11 @@ pool:
 trigger:
     [master]
 
+pr:
+  branches:
+    include:
+    - '*'
+
 steps:
 - checkout: self  # self represents the repo where the initial Pipelines YAML file was found
   
