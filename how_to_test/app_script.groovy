@@ -2,7 +2,7 @@ definition(
     name: "MyApp",
     namespace: "hubitat_ci_example",
     author: "Artem Tokmakov",
-    description: "Minimal app",
+    description: "Simple app",
     iconUrl: "",
     iconX2Url: "",
     iconX3Url: ""

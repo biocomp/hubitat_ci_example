@@ -8,9 +8,15 @@ metadata {
     }
 }
 
-def parse() {}
+Map parse(String message) {}
 
 def readSomeState(def name)
 {
     return state."${name}"
+}
+
+def logSomething()
+{
+    log.info("Logging some info")
+    log.error("That's an error!")
 }
