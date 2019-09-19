@@ -19,6 +19,7 @@ class UsingCapturingLog extends Specification
             final def script = new HubitatDeviceSandbox(new File("device_script.groovy")).run(api: api)
 
         when:
+            // Calling method defined in the script
             script.logSomething()
 
         then:

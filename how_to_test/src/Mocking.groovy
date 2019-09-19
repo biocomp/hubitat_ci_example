@@ -24,6 +24,7 @@ class Mocking extends Specification
                     .run(api: executorApi)
 
         expect:
+            // Calling method defined in the script
             script.myHubUIdMethod() == "Mocked UID"
     }
 
@@ -38,6 +39,7 @@ class Mocking extends Specification
                     })
 
         expect:
+            // Calling method defined in the script
             script.methodThatCallsPrivateMethod() == "Mocked data!"
     }
 
@@ -56,6 +58,7 @@ class Mocking extends Specification
                     .run(api: executorApi)
 
         expect:
+            // Calling methods defined in the script
             script.readSomeState("val1") == 42
             script.readSomeState("val2") == "Some value2"
             script.readSomeState("invalid") == null
