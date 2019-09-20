@@ -8,11 +8,15 @@ class HowToTestDevice extends
 {
     // Creating a sandbox object for device script from file.
     // At this point, script object is not created.
+    // Using Hubitat**Device**Sandbox for app scripts.
     HubitatDeviceSandbox sandbox = new HubitatDeviceSandbox(new File("device_script.groovy"))
 
     def "Basic validation"() {
         expect:
             // Compile, construct script object, and initialize metadata
-            sandbox.run() 
+            final def script = sandbox.run()
+
+            // Call method defined in the script
+            script.parse("Message") == [source: "Message", result: 42]
     }
 }

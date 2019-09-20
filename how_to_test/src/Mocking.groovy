@@ -28,7 +28,7 @@ class Mocking extends Specification
             script.myHubUIdMethod() == "Mocked UID"
     }
 
-    def "Mocking calls to internal scripts methods "()
+    def "Mocking calls to internal scripts methods"()
     {
         setup:
             def script = new HubitatAppSandbox(new File("app_script.groovy"))

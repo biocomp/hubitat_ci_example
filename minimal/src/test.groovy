@@ -8,11 +8,15 @@ import spock.lang.Specification
 class Test extends
         Specification
 {
+    // Creating a sandbox object for device script from file.
+    // At this point, script object is not created.
+    // Using Hubitat**App**Sandbox for app scripts.
     HubitatAppSandbox sandbox = new HubitatAppSandbox(new File("appscript.groovy"))
 
     def "Basic validation"() {
         expect:
-            sandbox.run() // Runs and validates definition() and preferences().
+            // Compile, construct script object, and validate definition() and preferences()
+            sandbox.run()
     }
 
     def "installed() logs 'Num'"() {

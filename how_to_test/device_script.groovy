@@ -8,7 +8,7 @@ metadata {
     }
 }
 
-Map parse(String message) {}
+Map parse(String message) { return [source: message, result: 42] }
 
 def readSomeState(def name)
 {
