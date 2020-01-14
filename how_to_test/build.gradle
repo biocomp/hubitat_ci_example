@@ -15,11 +15,11 @@ repositories {
 
     maven {
         url 'https://biocomp.pkgs.visualstudio.com/HubitatCiRelease/_packaging/hubitat_ci_feed@Release/maven/v1'
-    }   
+    }
 }
 
 dependencies {
     testCompile 'org.codehaus.groovy:groovy-all:2.5.4' // groovy itself
     testCompile "org.spockframework:spock-core:1.2-groovy-2.5" // spock framework
-    testCompile "me.biocomp.hubitat_ci:hubitat_ci:0.8" // hubita_ci
+    testCompile "me.biocomp.hubitat_ci:hubitat_ci:0.10" // hubita_ci
 }
