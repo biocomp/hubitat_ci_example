@@ -4,3 +4,6 @@
 */out/
 *.iml
 .gradle/
+how_to_test/gradlew
+how_to_test/gradlew.bat
+how_to_test/gradle/
